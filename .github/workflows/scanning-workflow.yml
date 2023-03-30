@@ -2,11 +2,12 @@
 name: Terraform Scan Workflow
 
 on:
-  pull-request:
+  push:
     branches:
       - develop
     paths:
-      - ./github/workflows/develop-workflow.yml
+      - ./github/workflows/scanning-workflow.yml
+      - ./github/workflows/plan-and-apply.yml
       - ./terraform/**
       - ./environments/*
       
