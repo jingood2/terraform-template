@@ -133,7 +133,7 @@ jobs:
     
     steps:
       - name: Download Artifact
-        working-directory: ./terraform
+        
         uses: actions/download-artifact@v3
         with:
           name: ${{ env.TF_KEY }}
