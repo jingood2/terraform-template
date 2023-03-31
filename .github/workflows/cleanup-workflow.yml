@@ -47,8 +47,9 @@ jobs:
         with:
           aws-region: ap-northeast-2
           #role-to-assume: arn:aws:iam::783857413761:role/GithubOIDCRole
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.DEV_DEPLOY_ROLE }}
+          #aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          #aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Terraform Init - ${{ inputs.gh_environment }}
         id: init
