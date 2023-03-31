@@ -22,12 +22,6 @@ on:
         type: string
         default: false
     secrets:
-      #AWS_ACCESS_KEY_ID:
-      #  description: 'Specifies the AWS_CLIENT_ID.'
-      #  required: true
-      #AWS_SECRET_ACCESS_KEY:
-      #  description: 'Specifies the AWS_SECRET_ACCESS_KEY.'
-      #  required: true
       DEV_DEPLOY_ROLE:
         description: 'Specifies the DEV_DEPLOY_ROLE'
         required: true
