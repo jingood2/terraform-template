@@ -157,9 +157,9 @@ jobs:
         ADD_LABEL: "${{ matrix['path'] }} approved"
     
     - name: Terraform Apply
-        #if: contains(github.event.pull_request.labels.*.name, "${{matrix['path']}} approved")
-        run: |
-          terraform apply plan.tfplan
+      if: contains(github.event.pull_request.labels.*.name, "${{matrix['path']}} approved")
+      run: |
+        terraform apply plan.tfplan
 
   #deploy_dev:
   #  #if: contains(github.event.pull_request.labels.*.name, 'dev approved')
