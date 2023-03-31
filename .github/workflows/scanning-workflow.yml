@@ -6,10 +6,10 @@ on:
     branches:
       - develop
     paths:
-      - ./github/workflows/scanning-workflow.yml
-      - ./github/workflows/plan-and-apply.yml
-      - ./terraform/**
-      - ./environments/*
+      - .github/workflows/scanning-workflow.yml
+      - .github/workflows/plan-and-apply.yml
+      - terraform/**
+      - .environments/*
       
 
 jobs:
