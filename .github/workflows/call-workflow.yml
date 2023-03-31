@@ -95,7 +95,7 @@ jobs:
       with:
         aws-region: us-east-1
         #role-to-assume: arn:aws:iam::783857413761:role/GithubOIDCRole
-        DEV_DEPLOY_ROLE: ${{ secrets.DEV_DEPLOY_ROLE }}
+        role-to-assume: ${{ secrets.DEV_DEPLOY_ROLE }}
         #aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         #aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
