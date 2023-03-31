@@ -104,11 +104,10 @@ jobs:
         zip -r tfplan.zip ./*
 
     - name: Upload Artifact
-      working-directory: ./terraform
       uses: actions/upload-artifact@v3
       with:
         name: ${{ inputs.gh_environment }}
-        path: 'tfplan.zip'
+        path: './terraform/tfplan.zip'
         retention-days: 5
     
 
