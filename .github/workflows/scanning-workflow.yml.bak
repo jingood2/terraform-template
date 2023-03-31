@@ -6,11 +6,16 @@ on:
     branches:
       - develop
     paths:
-      - ./github/workflows/scanning-workflow.yml
-      - ./github/workflows/plan-and-apply.yml
-      - ./terraform/**
-      - ./environments/*
+      - .github/workflows/scanning-workflow.yml
+      - .github/workflows/plan-and-apply.yml
+      - terraform/**
+      - .environments/*
       
+permissions: write-all
+
+defaults:
+  run:
+    working-directory: ./terraform
 
 jobs:
   terraform-scan:
@@ -18,12 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-      pull-requests: write
+    
+   
 
     steps:
       - name: Check out code

@@ -16,7 +16,7 @@ repos:
   hooks:
     - id: terraform-docs-modules
       name: terraform-docs-modules
-      entry: terraform-docs ./terraform
+      entry: terraform-docs .
       language: system
       pass_filenames: false
       always_run: true
