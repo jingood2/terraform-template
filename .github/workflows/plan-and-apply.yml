@@ -65,7 +65,7 @@ jobs:
       run: |
         SAVED_TF_WORKSPACE=$TF_WORKSPACE
         unset TF_WORKSPACE
-        terraform init -input=false -backend-config="key=${{inputs.gh_environment}}" -backend-config="environments/${{inputs.gh_environment}}.conf"
+        terraform init -input=false -backend-config="key=${{inputs.gh_environment}}" -backend-config="../environments/${{inputs.gh_environment}}.conf"
         TF_WORKSPACE=$SAVED_TF_WORKSPACE
         terraform workspace select "${TF_WORKSPACE}" || terraform workspace new "${TF_WORKSPACE}"
 
@@ -82,7 +82,7 @@ jobs:
     - name: Terraform Plan - ${{ inputs.gh_environment }}
       working-directory: ./terraform
       id: plan
-      run: terraform plan --var-file=environments/${{inputs.gh_environment}}.auto.tfvars --out=plan.tfplan
+      run: terraform plan --var-file=../environments/${{inputs.gh_environment}}.auto.tfvars --out=plan.tfplan
       continue-on-error: true
 
     - name: Post Plan - ${{ inputs.gh_environment }}
