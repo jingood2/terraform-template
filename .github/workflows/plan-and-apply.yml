@@ -131,10 +131,6 @@ jobs:
       TF_KEY: ${{ inputs.gh_environment }}
       TF_WORKSPACE: ${{ inputs.gh_environment }}
     
-    defaults:
-      run:
-        working-directory: ./terraform
-
     steps:
       - name: Download Artifact
         uses: actions/download-artifact@v3
